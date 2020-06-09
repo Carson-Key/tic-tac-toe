@@ -22,4 +22,10 @@ class Game
     end
   end
 
+  def winner
+    if @board.token_at(:top, :left) == :x && @board.token_at(:top, :middle) == :x && @board.token_at(:top, :right) == :x
+      :x
+    end
+  end
+
 end
