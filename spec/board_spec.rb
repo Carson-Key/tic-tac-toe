@@ -16,6 +16,14 @@ describe 'A Tic Tac Toe board' do
     })
   }
 
+  let(:full_board) {
+    Board.new({
+      top: {left: :fake, middle: :fake, right: :fake},
+      middle: {left: :fake, middle: :fake, right: :fake},
+      bottom: {left: :fake, middle: :fake, right: :fake}
+    })
+  }
+
   it 'exists' do
     Board.new
   end
@@ -44,6 +52,10 @@ describe 'A Tic Tac Toe board' do
   it 'empty? returns true if empty' do
     board = Board.new
     expect(board.empty?).to be_truthy
+  end
+
+  it 'empty? returns false if not empty' do
+    expect(midgame_board.empty?).to be_falsy
   end
 
 end
