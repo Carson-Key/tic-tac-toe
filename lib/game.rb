@@ -25,6 +25,8 @@ class Game
   def winner
     if @board.token_at(:top, :left) == :x && @board.token_at(:top, :middle) == :x && @board.token_at(:top, :right) == :x
       :x
+    elsif @board.token_at(:top, :left) == :o && @board.token_at(:top, :middle) == :o && @board.token_at(:top, :right) == :o
+      :o
     end
   end
 
