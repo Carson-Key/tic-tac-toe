@@ -16,4 +16,10 @@ class Game
     end
   end
 
+  def tie?
+    if board.full?
+      true
+    end
+  end
+
 end
