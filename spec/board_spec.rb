@@ -58,4 +58,8 @@ describe 'A Tic Tac Toe board' do
     expect(midgame_board.empty?).to be_falsy
   end
 
+  it 'full? returns true if full' do
+    expect(full_board.full?).to be_truthy
+  end
+
 end
