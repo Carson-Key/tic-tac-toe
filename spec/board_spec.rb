@@ -2,6 +2,12 @@ require_relative '../lib/board'
 
 describe 'A Tic Tac Toe board' do
 
+  empty_board = {
+    top: {left: nil, middle: nil, right: nil},
+    middle: {left: nil, middle: nil, right: nil},
+    bottom: {left: nil, middle: nil, right: nil}
+  }
+
   let(:midgame_board) {
     Board.new({
       top: {left: :o, middle: nil, right: nil},
@@ -27,6 +33,12 @@ describe 'A Tic Tac Toe board' do
 
   it 'token_at method grabs correct token' do
     expect(midgame_board.token_at(:top, :left)).to eq(:o)
+  end
+
+  it 'reset method resets the board' do
+    midgame_board.reset
+
+    expect(midgame_board.locations).to  eq(empty_board)
   end
 
 end
