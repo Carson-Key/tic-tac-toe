@@ -38,7 +38,12 @@ describe 'A Tic Tac Toe board' do
   it 'reset method resets the board' do
     midgame_board.reset
 
-    expect(midgame_board.locations).to  eq(empty_board)
+    expect(midgame_board.locations).to eq(empty_board)
+  end
+
+  it 'empty? returns true if empty' do
+    board = Board.new
+    expect(board.empty?).to be_truthy
   end
 
 end
